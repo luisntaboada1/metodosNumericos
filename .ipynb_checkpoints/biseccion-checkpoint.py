@@ -53,14 +53,11 @@ else:
         print(f'nuevoLim: {nuevoLim}')
 
         if nuevoLim[2] == valoresInf[2]:
-            valoresInf[0] = nuevoLim[0]
-            valoresInf[1] = nuevoLim[1]
-            valoresInf[2] = nuevoLim[2]
+            valoresInf = nuevoLim
             print('inf')
+        
         elif nuevoLim[2] == valoresSup[2]:
-            valoresSup[0] = nuevoLim[0]
-            valoresSup[1] = nuevoLim[1]
-            valoresSup[2] = nuevoLim[2]
+            valoresSup = nuevoLim
             print('sup')
 
         else: 
