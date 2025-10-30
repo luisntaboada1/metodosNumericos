@@ -1,0 +1,23 @@
+ALGORITMO DE BISECCION.
+
+Temas por abarcar en la explicación:
+-Requerimientos y condiciones
+-Teorema de Bolzano
+-Filosofía del algoritmo (encontrar raíce, etc)
+-Explicación del algoritmo
+-Ejemplo 1. Ecuación sencilla
+-Ejemplo 2. Con el problema general
+-Análisis de rendimiento (con pros, contras y rendimiento puro)
+-Hacer un resumen de todo. Como una ficha del fifa para cada 
+
+REQUERIMIENTOS:
+-La función tiene que ser continua en el rango en el cual se va a trabajar.
+
+Teorema de Bolzano.
+
+Formalmente el teorema de Bolzano establece lo siguiente:
+… (explicación formal con LaTeX, fuentes y todo el rollo)
+
+De otra forma, si una función es continua en un rango [a, b], en el cual la función toma valores con signos contrarios, significa que en ese rango, hay algún punto en el que la función tomara el valor de 0.
+Si pasa de ser negativa a positiva, a fuerzas tuvo que pasar por el 0.
+Este teorema es la base teorica sobre la cual el método de bisección opera. Por eso se requiere que la función a la cual se le aplique el algoritmo sea continua.
