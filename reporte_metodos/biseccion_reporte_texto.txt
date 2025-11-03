@@ -2,6 +2,7 @@ ALGORITMO DE BISECCION.
 
 Temas por abarcar en la explicación:
 -Requerimientos y condiciones
+-épsilon como criterio de detención
 -Teorema de Bolzano
 -Filosofía del algoritmo (encontrar raíce, etc)
 -Explicación del algoritmo
@@ -13,7 +14,25 @@ Temas por abarcar en la explicación:
 REQUERIMIENTOS:
 -La función tiene que ser continua en el rango en el cual se va a trabajar.
 
-Teorema de Bolzano.
+
+
+N. METODO DE BISECCION
+El método de bisección es un método numerico diseñado para encontrar raíces de ecuaciones (puntos en los que la función es 0). Como muchos de los algoritmos y métodos del curso, este método esta pensado para encontrar
+estos puntos cuando por alguna razón sea mas difícil o imposible encontrar las raíces de forma analítica. La biseccion destaca por lo sencillo del metodo, su velocidad y los pocos requerimientos que tiene.
+ 
+A grandes rasgos este método usa como base el teorema de Bolzano para ir dividiendo iterativamente por la mitad rangos donde se sabe que esta el punto en el que la función vale 0 (f(O) = 0) y el proceso se detiene cuando el rango sea
+igual o menor que un valor de referencia establecido previamente. 
+
+N.1 REQUERIMIENTOS:
+Este método requiere:
+1. Que la función tenga puntos con signos contrarios
+2. Que sea continua por 0 y sus alrededores
+3. Como muchos metodos similares, un epsilon de detencion.
+4. Solo para funciones en R2
+5. Saber en que rango pasa el 0
+
+
+N.2. Teorema de Bolzano.
 
 Formalmente el teorema de Bolzano establece lo siguiente:
 … (explicación formal con LaTeX, fuentes y todo el rollo)
@@ -21,3 +40,30 @@ Formalmente el teorema de Bolzano establece lo siguiente:
 De otra forma, si una función es continua en un rango [a, b], en el cual la función toma valores con signos contrarios, significa que en ese rango, hay algún punto en el que la función tomara el valor de 0.
 Si pasa de ser negativa a positiva, a fuerzas tuvo que pasar por el 0.
 Este teorema es la base teorica sobre la cual el método de bisección opera. Por eso se requiere que la función a la cual se le aplique el algoritmo sea continua.
+
+N.3. Algoritmo de bisección.
+(Imagen)
+
+A grandes rasgos, el algoritmo de biseccion consiste en: 
+1. Establecer un épsilon como criterio de detención.
+El 'epsilon' es un valor de referencia que se usara para detener el algoritmo. Cuando la diferencia entre el limite nuevo y el anterior (a - c) sea menor que este epsilon, significaria que el rango ya es lo suficientemente chico que mas 
+iteraciones son irrelevantes
+
+2. Establecer un rango inicial [a, b] en el cual se sabe que existe una raiz y signos contrarios.
+Se tiene que establecer un rango por donde se sepa que esta f(x) = 0 y los limites sean de signos contrarios. Si f(a) > 0 => f(b) < 0 y viceversa
+
+3. Calcular el punto medio del rango.
+usando el rango ams reciente, el punto se puede calcular con (a+b)/2
+
+3.1. Si el punto medio es mayor que 0, se sustituye ese punto con el limite de signo positivo.
+Si la funcion es mayor que 0 en el limite inferior, se sustituye ese limite. Si la funcion es mayor que 0 en el limite inferior, se sustituye ese limite
+
+3.2. Si el punto medio es menor que 0, se sustituye ese punto con el limite de signo negativo.
+Si la funcion es menor que 0 en el limite inferior, se sustituye ese limite. Si la funcion es menor que 0 en el limite inferior, se sustituye ese limite
+
+4. Cuando se llegue a un delta lo suficientemente pequeño, se detiene el algoritmo, si no, se repite desde el punto 3. 
+
+
+
+
+
