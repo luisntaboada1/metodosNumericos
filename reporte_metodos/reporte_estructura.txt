@@ -1,0 +1,43 @@
+REPORTE METODOS NUMERICOS:
+
+---METODOS / ALGORITMOS---
+https://www.escom.ipn.mx/docs/oferta/uaLCD2020/metodosNumericos_LCD2020.pdf
+(Los algoritmos marcados con * son los que mas se han visto en clase)
+
+1.er Parcial:
+1.1. Método de bisección *
+1.2. Método de Falsa Posición
+1.3. Método de iteración de punto fijo *
+1.4. Método de Newton-Raphson *
+1.5. Método de la secante *
+1.6. Método de Muller *
+1.7. Método de Bairstow
+
+---Estructura del método---
+Que me importa conocer de un algoritmo?.
+-Para que sirve
+-En que situaciones puedo usarlo (requisitos)
+-Que tan bueno es (rendimiento)
+-Que tan complicado es de aplicar
+
+1. Overview
+Explicación general, un poco de los requisitos y rendimiento, de la filosofía del método. Un resumen de lo que se va a desglozar.
+
+2. Condiciones y requisitos.
+Que se necesita para poder aplicar este método. Y el desglose de estos requisitos (ejemplo: Teorema de Bolzano)
+
+3. Explicación del algoritmo (paso x paso)
+Si se puede, usar diagramas
+
+4. Ejemplo 1 Basico.
+Usando un ejemplo simple y sin contexto.
+
+5.Analisis de rendimiento.
+rapidez, eficiencia en memoria y (???????) ---> Tengo que saber aprender a juzgar algoritmos. (supongo que es que tan bien mueves el modelo)
+
+6. Ejemplo Practico (con el problema de contexto)
+
+7. Hacer una ficha del método numerico
+Parecida a las fichas de jugador de fifa. Tendra que reflejar bien lo mas importante de un método numérico.
+
+
