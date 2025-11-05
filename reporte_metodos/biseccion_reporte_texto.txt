@@ -52,8 +52,10 @@ Se tiene que establecer un rango por donde se sepa que esta f(x) = 0 y los limit
 El 'epsilon' es un valor de referencia que se usara para detener el algoritmo. Cuando la diferencia entre el limite nuevo y el anterior (a - c) sea menor que este epsilon, significaria que el rango ya es lo suficientemente chico que mas 
 iteraciones son irrelevantes
 
+3. Evalue f en los limites del rango
+
 3. Calcular el punto medio del rango.
-usando el rango ams reciente, el punto se puede calcular con (a+b)/2
+usando el rango mas reciente, el punto se puede calcular con (a+b)/2
 
 3.1. Si el punto medio es mayor que 0, se sustituye ese punto con el limite de signo positivo.
 Si la funcion es mayor que 0 en el limite inferior, se sustituye ese limite. Si la funcion es mayor que 0 en el limite inferior, se sustituye ese limite
@@ -68,15 +70,50 @@ Si la funcion es menor que 0 en el limite inferior, se sustituye ese limite. Si 
 Veamos un ejemplo del método de bisección con una función simple y sin ambigüedades para facilitar el algoritmo.
 Tomemos la función f(x) = x - 100.
 
-1. Lo primero que hay que hacer es establecer un rango inicial.
-De esta función sabemos que el f(x) = 0 esta en x = 100, entonces nuestro rango inicial deberá estar alrededor de x = 100.
-Para hacer mas fácil de visualizar la evolución del algoritmo, usaremos como rango inicial [50, -200].
-Con eso tenemos f(x) = x - 100 y [-50, 200].
+1era Iteración:
 
-2. Establecer un criterio de detención.
+1.1 Lo primero que hay que hacer es establecer un rango inicial.
+De esta función sabemos que el f(x) = 0 esta en x = 100, entonces nuestro rango inicial deberá estar alrededor de x = 100 y f tiene que tener signos contrarios en los limites
+Para hacer mas fácil de visualizar la evolución del algoritmo, usaremos como rango inicial [50, 200].
+Con eso tenemos f(x) = x - 100 y [50, 200].
+
+1.2. Ahora, hay que evaluar f en los limites de nuestra función.
+f(50) = -50, negativo
+f(200) = 100, positivo
+
+1.3. Establecer un criterio de detención.
 Digamos que nos vamos a detener cuando el tamaño del rango sea igual o menor a 0.01
 
-3. 
+1.4. Ahora, calculemos el punto medio de nuestro rango [50, 200].
+La formula general para hacer esto es (a + b) / 2, siendo a el limite inferior y b el limite superior. 
+Entonces: (50 + 200) / 2 = 125 
 
+5. Evaluemos en f y veamos:
+f(125) = 25
+
+6. Como f(125) es positivo, sustituiremos 125 con 200, que también es positivo en f
+
+7. Como nuestro criterio de detención todavía no se cumple, repetiremos des de el principio
+
+Ahora, desarrollando mas rápido:
+
+Perfecto—mismo estilo, más explícito y separado por pasos.
+
+8. Iteración n
+   8.1) Calcular punto medio: ([a+b]/2 = (50.0+200.0)/2 = 125.0)
+   8.2) Evaluar: (f(125.0)=25.0>0)
+   8.3) Sustituir: signo “+” ⇒ reemplazo el superior (b=200.0) por (125.0) ⇒ nuevo rango ([50.0,,125.0])
+
+9. Iteración n+1
+   9.1) Calcular punto medio: ([a+b]/2 = (50.0+125.0)/2 = 87.5)
+   9.2) Evaluar: (f(87.5)=-12.5<0)
+   9.3) Sustituir: signo “−” ⇒ reemplazo el inferior (a=50.0) por (87.5) ⇒ nuevo rango ([87.5,,125.0])
+
+10. Iteración n+2
+    10.1) Calcular punto medio: ([a+b]/2 = (87.5+125.0)/2 = 106.25)
+    10.2) Evaluar: (f(106.25)=6.25>0)
+    10.3) Sustituir: signo “+” ⇒ reemplazo el superior (b=125.0) por (106.25) ⇒ nuevo rango ([87.5,,106.25])
+
+11. Repitiendo el mismo proceso otras (N) veces, acabamos con [ \ \ \ ].
 
 

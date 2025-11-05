@@ -32,6 +32,9 @@ Si se puede, usar diagramas
 4. Ejemplo 1 Basico.
 Usando un ejemplo simple y sin contexto.
 
+5. Codigo
+Explicación de como se construyo el código
+
 5.Analisis de rendimiento.
 rapidez, eficiencia en memoria y (???????) ---> Tengo que saber aprender a juzgar algoritmos. (supongo que es que tan bien mueves el modelo)
 
