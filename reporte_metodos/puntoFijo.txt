@@ -1,0 +1,161 @@
+ALGORTIMO DE PUNTO FIJO:
+
+1. ---------EXPLICACION A GRANDES RASGOS-----------
+El método numerico de punto fijo iterativo, o algoritmo de punto fijo, es un método para encuentrar el punto en el que una función es igual a su argumento y por consecuencia, raíces de funciones.
+f(x0) = x0 (se forma un cuadrado o un cubo. Eso es un punto fijo) 
+Evalúa iterativamente una función, donde cada en iteración se evalúa la función usando el valor de la función en el punto pasado
+f(x0) = x1 => f(x1) = x2 => f(x2) = x3 => … => f(xn-1) = n
+Para encontrar las raíces de un f(x), se reescribe f(x) = 0 a una expresion de la forma g(x) = x. Si se aplica el algoritmo a g(x), y este converge a un punto, significa que en ese punto f(x) = x
+
+3. ALGORITMO-----------------------
+(Algoritmo y terminar con una explicación clara de por que se afirma que si g(x) = x => f(x) = 0)
+
+4.1 REQUISITOS---------------------
+
+
+5. EJEMPLOS SIMPLES----------------
+5.1. , 5.2. EJEMPLOS DE NO CONVERGENCIA
+5.3. EJEMPLO DE CONVERGENCIA
+
+
+Se dice que los puntos fijos de una función son aquellos en los que f(x0) = x0
+Se puede usar para encontrar raíces de una función al descomponer una función en una expresión g(x) = x
+Si el algortimo converge a un valor, ese valor es un punto fijo de la función por lo que en ese punto g(x) = x y ahí hay raíz
+
+
+
+Perfecto, vamos a compactarlo un poco pero manteniendo la estructura clara y usando **exactamente** los datos que diste.
+
+---
+
+### EJEMPLO: Método de punto fijo (punto iterativo)
+
+Tomemos como **función de iteración**:
+
+[
+g(x) = \ln(x - 4)
+]
+
+Supondremos que (g(x)) ya fue elegida de manera que satisface las condiciones de convergencia necesarias en el intervalo que nos interesa.
+
+**Datos del ejemplo**
+
+* Función de iteración: (g(x) = \ln(x - 4))
+* Valor inicial: (x_0 = 1)
+* Criterio de detención: nos detenemos cuando
+  [
+  |x_{k+1} - x_k| \le 0.0002
+  ]
+* Sucesión de valores (ya calculados) que usaremos:
+
+[
+\begin{aligned}
+x_0 &= 1 \
+x_1 &= 1.0986122886681098 \
+x_2 &= 1.065189143686622 \
+x_3 &= 1.0766430070172015 \
+x_4 &= 1.0727326110638915 \
+x_5 &= 1.0740693560949626 \
+x_6 &= 1.0736125989352658 \
+x_7 &= 1.0737686933775414
+\end{aligned}
+]
+
+*(En este ejemplo solo usamos estos valores; no volvemos a calcular nada.)*
+
+---
+
+### Iteración 1
+
+1. **Elegir punto inicial**
+   Partimos de:
+   [
+   x_0 = 1
+   ]
+
+2. **Aplicar la función de iteración**
+   El método de punto fijo define:
+   [
+   x_1 = g(x_0) = \ln(x_0 - 4)
+   ]
+
+3. **Tomar el valor ya obtenido para (x_1)**
+   En lugar de calcular, usamos el valor proporcionado:
+   [
+   x_1 = 1.0986122886681098
+   ]
+
+4. **Revisar criterio de detención**
+   Consideramos la diferencia (|x_1 - x_0|).
+   Supongamos que todavía **no** cumple (|x_1 - x_0| \le 0.0002), así que el método continúa.
+
+---
+
+### Iteración 2
+
+1. **Punto actual**
+   Ahora el valor “de entrada” es:
+   [
+   x_1 = 1.0986122886681098
+   ]
+
+2. **Aplicar la función de iteración**
+   De nuevo usamos la regla del método:
+   [
+   x_2 = g(x_1) = \ln(x_1 - 4)
+   ]
+
+3. **Tomar el valor ya obtenido para (x_2)**
+   Usamos el dato dado:
+   [
+   x_2 = 1.065189143686622
+   ]
+
+4. **Revisar el criterio de detención**
+   Observamos (|x_2 - x_1|).
+   Todavía no se cumple la tolerancia, así que seguimos iterando.
+
+---
+
+### Iteraciones siguientes (3 a 7)
+
+A partir de aquí, el procedimiento es exactamente el mismo:
+
+* Tomamos el valor actual (x_k).
+* Aplicamos la regla:
+  [
+  x_{k+1} = g(x_k) = \ln(x_k - 4)
+  ]
+* Usamos el valor de (x_{k+1}) que ya tenemos en la lista.
+* Revisamos si (|x_{k+1} - x_k|) cumple el criterio de detención. Si no, seguimos; si sí, nos detenemos.
+
+En nuestro ejemplo, las iteraciones continúan así:
+
+* Iteración 3: de (x_2) a
+  [
+  x_3 = 1.0766430070172015
+  ]
+* Iteración 4:
+  [
+  x_4 = 1.0727326110638915
+  ]
+* Iteración 5:
+  [
+  x_5 = 1.0740693560949626
+  ]
+* Iteración 6:
+  [
+  x_6 = 1.0736125989352658
+  ]
+* Iteración 7:
+  [
+  x_7 = 1.0737686933775414
+  ]
+
+En este punto, la diferencia (|x_7 - x_6|) ya es suficientemente pequeña para satisfacer el criterio de detención fijado, de modo que **ahí se detiene el algoritmo** y tomamos:
+
+[
+x^* \approx x_7 = 1.0737686933775414
+]
+
+como aproximación del **punto fijo** de la función de iteración (g(x)) bajo el criterio establecido.
